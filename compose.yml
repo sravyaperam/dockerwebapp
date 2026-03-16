@@ -5,9 +5,13 @@ services:
    image: sravyaperam/mywebrepo:dbimage
    ports:
      - "3306:3306"
+   deploy:
+     replicas: 3
  application:
    image: sravyaperam/mywebrepo:appimage
    ports:
-     - "1234:8080"
+     - "1234:8080
+   deploy:
+       replicas: 3
    depends_on:
      - "devopsdb"
